@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68152FC4-2DA4-6E53-3A2A-9D20D4E9DE88}|TanvasTouchHapticKnob.csproj|c:\\simulatorplatform\\tanvastouch sdk\\api\\.net\\examples\\hapticknobwpf\\tanvastouchhapticknob\\hapticknob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68152FC4-2DA4-6E53-3A2A-9D20D4E9DE88}|TanvasTouchHapticKnob.csproj|solutionrelative:hapticknob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68152FC4-2DA4-6E53-3A2A-9D20D4E9DE88}|TanvasTouchHapticKnob.csproj|c:\\simulatorplatform\\tanvastouch sdk\\api\\.net\\examples\\hapticknobwpf\\tanvastouchhapticknob\\autolerp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68152FC4-2DA4-6E53-3A2A-9D20D4E9DE88}|TanvasTouchHapticKnob.csproj|solutionrelative:autolerp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoLerp.cs",
+              "DocumentMoniker": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\AutoLerp.cs",
+              "RelativeDocumentMoniker": "AutoLerp.cs",
+              "ToolTip": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\AutoLerp.cs",
+              "RelativeToolTip": "AutoLerp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T16:56:58.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HapticKnob.cs",
+              "DocumentMoniker": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\HapticKnob.cs",
+              "RelativeDocumentMoniker": "HapticKnob.cs",
+              "ToolTip": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\HapticKnob.cs",
+              "RelativeToolTip": "HapticKnob.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAowKAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T16:52:01.775Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

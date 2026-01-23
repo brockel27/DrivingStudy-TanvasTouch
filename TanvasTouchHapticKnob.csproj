@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\background\base.png" />
+    <None Remove="assets\background\frame.png" />
+    <None Remove="assets\background\knob.png" />
+    <None Remove="assets\background\rotation_haptics.png" />
+    <None Remove="assets\background\section_active_acquired_single.png" />
+    <None Remove="assets\background\section_active_idle_single.png" />
+    <None Remove="assets\background\section_inactive_single.png" />
+    <None Remove="assets\nub\deselected.png" />
+    <None Remove="assets\nub\haptics.png" />
+    <None Remove="assets\nub\selected.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\background\knob.png" />
+    <None Remove="assets\background\rotation_haptics@1.png" />
+    <Resource Include="assets\background\rotation_haptics@1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="assets\background\rotation_haptics@1.25.png" />
+    <Resource Include="assets\background\rotation_haptics@1.25.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="assets\nub\haptics@1.png" />
+    <Resource Include="assets\nub\haptics@1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <None Remove="assets\nub\haptics@1.25.png" />
+    <Resource Include="assets\nub\haptics@1.25.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\background\base.png" />
+    <Resource Include="assets\background\frame.png" />
+    <Resource Include="assets\background\section_active_acquired_single.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\background\section_active_idle_single.png" />
+    <Resource Include="assets\background\section_inactive_single.png" />
+    <Resource Include="assets\nub\deselected.png" />
+    <Resource Include="assets\nub\selected.png" />
+    <PackageReference Include="Tanvas.TanvasTouch" Version="5.0.5" />
+    <PackageReference Include="Tanvas.TanvasTouch.WpfUtilities" Version="5.0.5" />
+  </ItemGroup>
+
+</Project>
