@@ -107,6 +107,11 @@ namespace TanvasTouchHapticKnob
 
         private readonly AcquireStateChange AcquireStateChangeDelegate;
 
+        // Set target section index for audio cue
+        private uint TargetSectionIndex = 3;
+        private bool HasPlayedTargetCue = false;
+        private readonly System.Media.SoundPlayer TargetReachedCue = new System.Media.SoundPlayer("assets/TargetSound.wav");
+
         // Each section marker needs a few things.
         class SectionMarker
         {
@@ -233,11 +238,16 @@ namespace TanvasTouchHapticKnob
             return angle;
         }
 
+        private SectionMarker[] GetSectionMarkers()
+        {
+            return SectionMarkers;
+        }
+
         /// <summary>
         /// This will set the knob at a particular angle of rotation.
         /// </summary>
         /// <param name="angle">The angle (in radian) at which to set the knob</param>
-        private void SetKnobAtAngle(double angle)
+        private void SetKnobAtAngle(double angle, SectionMarker[] sectionMarkers)
         {
             // Set the angle of the knob to match where the user has touched.
             KnobRotate.RenderTransform = new RotateTransform(angle * (180.0 / Math.PI), KnobRotate.ActualWidth / 2.0, KnobRotate.ActualHeight / 2.0);
@@ -255,8 +265,7 @@ namespace TanvasTouchHapticKnob
 
                 if (IsAcquired)
                 {
-                    // The knob is acquired, so light up the appropriate section marker.
-                    SectionMarkers[SectionIndex].Storyboard.Stop();
+                    sectionMarkers[SectionIndex].Storyboard.Stop();
                     SectionMarkers[SectionIndex].ActiveImageAcquired.Visibility = Visibility.Visible;
                 }
                 else
@@ -264,6 +273,17 @@ namespace TanvasTouchHapticKnob
                     // The knob isn't acquired, so illuminate that piece.
                     SectionMarkers[SectionIndex].ActiveImageIdle.Visibility = Visibility.Visible;
                 }
+            }
+
+            // Play audio cue if target section is reached
+            if (SectionIndex == TargetSectionIndex && !HasPlayedTargetCue)
+            {
+                TargetReachedCue.Play();
+                HasPlayedTargetCue = true;
+            }
+            else if (SectionIndex != TargetSectionIndex)
+            {
+                HasPlayedTargetCue = false;
             }
 
             // Save the current section index.
@@ -575,7 +595,7 @@ namespace TanvasTouchHapticKnob
             CreateActiveSectionMarks();
 
             // Home the knob to the 12:00 position.
-            SetKnobAtAngle((3.0 * Math.PI) / 2.0);
+            SetKnobAtAngle((3.0 * Math.PI) / 2.0, GetSectionMarkers());
         }
 
         /// <summary>
@@ -615,7 +635,7 @@ namespace TanvasTouchHapticKnob
         /// <param name="pct"></param>
         private void LerpUpdateCallback(float angle)
         {
-            SetKnobAtAngle(angle);
+            SetKnobAtAngle(angle, GetSectionMarkers());
         }
 
         /// <summary>
@@ -660,7 +680,7 @@ namespace TanvasTouchHapticKnob
                 Point TouchPointInCanvas = e.GetTouchPoint(KnobCanvas).Position;
 
                 // Set the knob to the appropriate angle.
-                SetKnobAtAngle(ComputeAngleFromPoint(TouchPointInCanvas));
+                SetKnobAtAngle(ComputeAngleFromPoint(TouchPointInCanvas), GetSectionMarkers());
             }
         }
 
