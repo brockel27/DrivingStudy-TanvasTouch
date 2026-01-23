@@ -77,11 +77,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\TanvasTouchHapticKnob.csproj",
+      "projectUniqueName": "C:\\SimulatorPlatform\\TanvasRepo\\TanvasTouchHapticKnob.csproj",
       "projectName": "TanvasTouchHapticKnob",
-      "projectPath": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\TanvasTouchHapticKnob.csproj",
+      "projectPath": "C:\\SimulatorPlatform\\TanvasRepo\\TanvasTouchHapticKnob.csproj",
       "packagesPath": "C:\\Users\\bwander\\.nuget\\packages\\",
-      "outputPath": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\obj\\",
+      "outputPath": "C:\\SimulatorPlatform\\TanvasRepo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

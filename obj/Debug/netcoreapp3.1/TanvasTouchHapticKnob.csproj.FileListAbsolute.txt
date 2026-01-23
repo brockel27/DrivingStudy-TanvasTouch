@@ -21,3 +21,27 @@ C:\SimulatorPlatform\TanvasTouch SDK\API\.NET\examples\hapticknobwpf\TanvasTouch
 C:\SimulatorPlatform\TanvasTouch SDK\API\.NET\examples\hapticknobwpf\TanvasTouchHapticKnob\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.dll
 C:\SimulatorPlatform\TanvasTouch SDK\API\.NET\examples\hapticknobwpf\TanvasTouchHapticKnob\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.pdb
 C:\SimulatorPlatform\TanvasTouch SDK\API\.NET\examples\hapticknobwpf\TanvasTouchHapticKnob\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.genruntimeconfig.cache
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.exe
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.deps.json
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.runtimeconfig.json
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.runtimeconfig.dev.json
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.dll
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\TanvasTouchHapticKnob.pdb
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\Tanvas.TanvasTouch.dll
+C:\SimulatorPlatform\TanvasRepo\bin\Debug\netcoreapp3.1\Tanvas.TanvasTouch.WpfUtilities.dll
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.csproj.AssemblyReference.cache
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\App.g.cs
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob_MarkupCompile.cache
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob_MarkupCompile.lref
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\MainWindow.baml
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.g.resources
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.GeneratedMSBuildEditorConfig.editorconfig
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.AssemblyInfoInputs.cache
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.AssemblyInfo.cs
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.csproj.CoreCompileInputs.cache
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.sourcelink.json
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTo.ACD8AE22.Up2Date
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.dll
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.pdb
+C:\SimulatorPlatform\TanvasRepo\obj\Debug\netcoreapp3.1\TanvasTouchHapticKnob.genruntimeconfig.cache

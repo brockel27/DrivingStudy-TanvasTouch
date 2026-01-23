@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xoE0BPVB3Dc=",
+  "dgSpecHash": "ksWJmcLmCuQ=",
   "success": true,
-  "projectFilePath": "C:\\SimulatorPlatform\\TanvasTouch SDK\\API\\.NET\\examples\\hapticknobwpf\\TanvasTouchHapticKnob\\TanvasTouchHapticKnob.csproj",
+  "projectFilePath": "C:\\SimulatorPlatform\\TanvasRepo\\TanvasTouchHapticKnob.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bwander\\.nuget\\packages\\tanvas.tanvastouch\\5.0.5\\tanvas.tanvastouch.5.0.5.nupkg.sha512",
     "C:\\Users\\bwander\\.nuget\\packages\\tanvas.tanvastouch.wpfutilities\\5.0.5\\tanvas.tanvastouch.wpfutilities.5.0.5.nupkg.sha512",
