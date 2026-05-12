@@ -1,0 +1,16 @@
+# Build artifacts
+bin/
+obj/
+
+# Visual Studio IDE files
+.vs/
+*.user
+*.suo
+
+# Study data output
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
