@@ -154,13 +154,30 @@ Session data is saved to `data/P{id}_{datetime}/` relative to the repo root:
 ```
 data/
 └── P01_2026-05-12_143022/
-    ├── beamng_vehicle.csv    # vehicle telemetry at ~20 Hz
+    ├── beamng_vehicle.csv    # vehicle telemetry + lane position at ~20 Hz
     ├── arduino_knob.csv      # encoder events (delta + accumulated position)
     ├── eyetracker_gaze.csv   # gaze x/y + confidence
     └── events.csv            # trial markers, condition changes, notes
 ```
 
 All timestamps use `time.monotonic()` (seconds since script start) as the shared clock across all four files — use `events.csv` to segment the other streams into trials.
+
+`beamng_vehicle.csv` columns relevant to SDLP analysis:
+
+| Column | Source | Description |
+|---|---|---|
+| `lane_offset_m` | `RoadsSensor.dist2CL` | Signed lateral distance from road centreline in metres. Positive = right of centre, negative = left. This is the raw value for computing SDLP. |
+| `heading_angle_rad` | `RoadsSensor.headingAngle` | Angle between vehicle heading and road tangent in radians. Use with `lane_offset_m` for heading-corrected lane position analysis. |
+
+**SDLP calculation (post-processing):**
+```python
+import pandas as pd
+
+df = pd.read_csv('data/P01_.../beamng_vehicle.csv')
+# Segment by trial using events.csv, then per trial:
+sdlp = df['lane_offset_m'].std()
+```
+`lane_offset_m` will be `None` if the vehicle is off any mapped road. Filter these rows before computing SDLP.
 
 ---
 

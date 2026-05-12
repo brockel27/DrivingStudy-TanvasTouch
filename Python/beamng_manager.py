@@ -3,7 +3,7 @@ import time
 import threading
 
 from beamngpy import BeamNGpy, Scenario, Vehicle
-from beamngpy.sensors import Electrics
+from beamngpy.sensors import Electrics, RoadsSensor
 
 import config
 from data_logger import DataLogger
@@ -15,6 +15,7 @@ class BeamNGManager:
         self._shutdown = shutdown
         self._bng = None
         self._ego = None
+        self._roads = None
         self._thread = None
         self.connected = False
 
@@ -41,6 +42,15 @@ class BeamNGManager:
         # State sensor is auto-attached; attach Electrics explicitly
         self._ego.sensors.attach('electrics', Electrics())
 
+        # RoadsSensor queries BeamNG's road network geometry to provide ground-truth
+        # lane position data (dist2CL = lateral offset from road centerline in metres).
+        # physics_update_time=0.05 keeps the internal update rate at 20 Hz to match
+        # our Python poll interval.
+        self._roads = RoadsSensor(
+            'roads', self._bng, self._ego,
+            physics_update_time=1.0 / config.BEAMNG_POLL_HZ,
+        )
+
         self.connected = True
         self._thread = threading.Thread(target=self._poll_loop, name='beamng-poll', daemon=True)
         self._thread.start()
@@ -50,6 +60,11 @@ class BeamNGManager:
     def stop(self):
         if self._thread:
             self._thread.join(timeout=3)
+        if self._roads:
+            try:
+                self._roads.remove()
+            except Exception:
+                pass
         if self._bng:
             self._bng.disconnect()
         self.connected = False
@@ -60,12 +75,23 @@ class BeamNGManager:
         while not self._shutdown.is_set():
             try:
                 t = time.monotonic()
+
                 self._ego.sensors.poll()
                 state = self._ego.sensors['state']
                 elec = self._ego.sensors['electrics']
                 pos = state['pos']
                 vel = state['vel']
                 speed = math.sqrt(sum(v ** 2 for v in vel))
+
+                # Poll lane position from road network geometry.
+                # dist2CL: signed lateral offset from road centreline (metres).
+                #   Positive = right of centreline, negative = left.
+                # headingAngle: angle between vehicle heading and road tangent (radians).
+                #   Used alongside dist2CL to compute heading-corrected SDLP offline.
+                road = self._roads.poll()
+                lane_offset = road.get('dist2CL') if road else None
+                heading_angle = road.get('headingAngle') if road else None
+
                 self._logger.log_beamng(
                     t,
                     pos[0], pos[1], pos[2],
@@ -74,6 +100,8 @@ class BeamNGManager:
                     elec.get('throttle', 0),
                     elec.get('brake', 0),
                     elec.get('gear_index', 0),
+                    lane_offset,
+                    heading_angle,
                 )
             except Exception as e:
                 print(f'[BeamNG] Poll error: {e}')

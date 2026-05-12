@@ -12,7 +12,8 @@ class DataLogger:
         self._dir.mkdir(parents=True, exist_ok=True)
         schemas = {
             'beamng_vehicle':  ['timestamp_mono', 'pos_x', 'pos_y', 'pos_z',
-                                 'speed_ms', 'steering', 'throttle', 'brake', 'gear'],
+                                 'speed_ms', 'steering', 'throttle', 'brake', 'gear',
+                                 'lane_offset_m', 'heading_angle_rad'],
             'arduino_knob':    ['timestamp_mono', 'delta', 'position'],
             'eyetracker_gaze': ['timestamp_mono', 'gaze_x', 'gaze_y', 'confidence'],
             'events':          ['timestamp_mono', 'event', 'value'],
@@ -31,9 +32,11 @@ class DataLogger:
         self._files.clear()
         self._writers.clear()
 
-    def log_beamng(self, t, pos_x, pos_y, pos_z, speed_ms, steering, throttle, brake, gear):
+    def log_beamng(self, t, pos_x, pos_y, pos_z, speed_ms, steering, throttle, brake, gear,
+                   lane_offset_m=None, heading_angle_rad=None):
         self._writers['beamng_vehicle'].writerow(
-            [t, pos_x, pos_y, pos_z, speed_ms, steering, throttle, brake, gear])
+            [t, pos_x, pos_y, pos_z, speed_ms, steering, throttle, brake, gear,
+             lane_offset_m, heading_angle_rad])
 
     def log_arduino(self, t, delta, position):
         self._writers['arduino_knob'].writerow([t, delta, position])
